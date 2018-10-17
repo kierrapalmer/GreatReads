@@ -1,0 +1,57 @@
+/*
+ * General
+ */
+:root{
+    --accent: #39b26e;
+}
+html, body, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-family: 'Open Sans', sans-serif;
+}
+.navbar{
+    background-color: black;
+}
+.feature-book{
+    margin: 5px;
+    padding: 15px 50px 15px 15px;
+    background-color: white;
+}
+
+.feature-book img{
+    width: 100%;
+}
+
+.truncate{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.feature-book h2{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.btn-accent{
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn-accent:hover{
+    background-color: #32975f;
+    color: white;
+}
+
+
+.want-book img{
+    width: 100%;
+    clip: rect(0px,60px,200px,0px);
+}
+

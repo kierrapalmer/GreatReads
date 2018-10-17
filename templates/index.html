@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}Greatreads - Homepage{% endblock %}
+
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Want to Read</h1>
+            <div class="row">
+            {% for book in books %}
+                {% if(book['wantToRead'] == True) %}
+                    <div class="col-md-4 col-sm-12 want-book">
+                        <img src="{{book['imgUrl']}}" alt="book">
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+
+
+            <h1>What your friends are reading</h1>
+            <div class="row">
+            {% for book in books %}
+                {% if(book['friendRead'] == True) %}
+                    <div class="col-md-4 col-sm-12 want-book">
+                        <img src="{{book['imgUrl']}}" alt="book">
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="row">
+            <h1>Featured Books</h1>
+            {% for book in books %}
+                {% if(book['featureBook'] == True) %}
+                    <div class="col-md-12 feature-book">
+                        <div class="row">
+                            <div class="col-md-3 book-img">
+                                <img src="{{book['imgUrl']}}" alt="book">
+                            </div>
+                            <div class="col-md-9">
+                                <h2>{{book['title']}}</h2>
+                                <p class="truncate">{{book['description']}}</p>
+                                <a href="" class="btn btn-accent">More Details</a>
+                            </div>
+
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
