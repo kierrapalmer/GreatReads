@@ -55,3 +55,24 @@ body {
     clip: rect(0px,60px,200px,0px);
 }
 
+
+
+/*Genres*/
+
+.genre-book img{
+    width:100%;
+    clear: both;
+}
+.genre, .more{
+    display: inline;
+}
+
+.more{
+        float: right;
+
+}
+
+.book-detail img{
+    width: 100%;
+}
+

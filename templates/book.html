@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Greatreads - {{book['title']}} {% endblock %}
+
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-3 book-detail">
+            <img src="{{book['imgUrl']}}" alt="">
+            <a href="">Are you this book's author or publisher?</a>
+
+        </div>
+        <div class="col-md-7 col-sm-6">
+            <h2>{{book['title']}}</h2>
+            <p>by {{book['author']}}</p>
+            <p>{{book['description']}}</p>
+            <p><strong>Genre:</strong>
+                {% for gen in book['genre'] %}
+                    {{gen}},
+                {%endfor %}
+            </p>
+        </div>
+
+        <div class="col-md-2 col-sm-3">
+        </div>
+
+    </div>
+</div>
+
+{%endblock%}

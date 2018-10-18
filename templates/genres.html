@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}Greatreads - Genres{% endblock %}
+
+
+
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="col-md-9 col-sm-6">
+
+    <h1 class="genre">Romance </h1><p class="more"><a href="" class="float-right">More</a></p>
+    <div class="row">
+        {% for book in books[:8] %}
+            {% if('Romance' in book['genre']) %}
+                <div class="col-md-3 col-sm-6 genre-book">
+                    {% set bookId = books.index(book) %}
+                    <a href="{{ url_for('book', id= bookId) }}">
+                    <img src="{{book['imgUrl']}}" alt="book">
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+        <br><br>
+
+    <h1 class="genre">Fantasy </h1><p class="more"><a href="" class="float-right">More</a></p>
+    <div class="row">
+        {% for book in books %}
+            {% if('Fantasy' in book['genre']) %}
+                <div class="col-md-3 col-sm-6 genre-book">
+                    {% set bookId = books.index(book) %}
+                    <a href="{{ url_for('book', id= bookId) }}">
+                        <img src="{{book['imgUrl']}}" alt="book">
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <br><br>
+
+    <h1 class="genre">Thriller </h1><p class="more"><a href="" class="float-right">More</a></p>
+    <div class="row">
+        {% for book in books %}
+            {% if('Thriller' in book['genre']) %}
+                <div class="col-md-3 col-sm-6 genre-book">
+                    {% set bookId = books.index(book) %}
+                    <a href="{{ url_for('book', id= bookId) }}">
+                    <img src="{{book['imgUrl']}}" alt="book">
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+        <
+    </div>
+    <div class="col-md-3 col-sm-6">
+        <h2>Favorite Genres</h2>
+        <a href="">Romance</a><br>
+        <a href="">Fantasy</a><br>
+        <a href="">Thriller</a>
+    </div>
+</div>
+</div>
+{% endblock %}

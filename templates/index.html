@@ -13,7 +13,9 @@
             {% for book in books %}
                 {% if(book['wantToRead'] == True) %}
                     <div class="col-md-4 col-sm-12 want-book">
-                        <img src="{{book['imgUrl']}}" alt="book">
+                        {% set bookId = books.index(book) %}
+                        <a href="{{ url_for('book', id= bookId) }}">
+                            <img src="{{book['imgUrl']}}" alt="book"></a>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -25,7 +27,10 @@
             {% for book in books %}
                 {% if(book['friendRead'] == True) %}
                     <div class="col-md-4 col-sm-12 want-book">
-                        <img src="{{book['imgUrl']}}" alt="book">
+                        {% set bookId = books.index(book) %}
+                        <a href="{{ url_for('book', id= bookId) }}">
+                            <img src="{{book['imgUrl']}}" alt="book">
+                        </a>
                     </div>
                 {% endif %}
             {% endfor %}
@@ -45,7 +50,10 @@
                             <div class="col-md-9">
                                 <h2>{{book['title']}}</h2>
                                 <p class="truncate">{{book['description']}}</p>
-                                <a href="" class="btn btn-accent">More Details</a>
+                                {% set bookId = books.index(book) %}
+                                <a class="btn btn-accent" href="{{ url_for('book', id= bookId) }}">
+                                More Details
+                                </a>
                             </div>
 
                         </div>

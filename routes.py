@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 
 
@@ -13,10 +13,16 @@ def index():
   return render_template("index.html", books=books)
 
 
-@app.route("/about")
-def about():
-  return render_template("about.html")
+@app.route("/genres")
+def genre():
+  return render_template("genres.html", books=books)
 
+
+@app.route("/book")
+def book():
+    bookid = int(request.args.get('id', None))
+    book = books[bookid]
+    return render_template("book.html", book=book)
 
 if __name__ == "__main__":
   app.run(debug=True)
