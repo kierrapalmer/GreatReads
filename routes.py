@@ -15,7 +15,8 @@ def index():
 
 @app.route("/genres")
 def genre():
-  return render_template("genres.html", books=books)
+    genre = request.args.get('genre', None)
+    return render_template("genres.html", books=books, genre=genre)
 
 
 @app.route("/book")

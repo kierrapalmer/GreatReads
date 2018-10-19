@@ -9,10 +9,44 @@
 <div class="row">
     <div class="col-md-9 col-sm-6">
 
-    <h1 class="genre">Romance </h1><p class="more"><a href="" class="float-right">More</a></p>
+        <h1 class="genre"><strong>{{genre}}</strong> </h1><p class="more"><a href="" class="float-right">More</a></p>
+    {% if(genre == "Romance") %}
+        <p>According to the Romance Writers of America, "Two basic elements comprise every romance novel:
+            a central love story and an emotionally-satisfying and optimistic ending." Both the conflict
+            and the climax of the novel should be directly related to that core theme of developing a romantic
+            relationship, although the novel can also contain subplots that do not specifically relate to the
+            main characters' romantic love. Other definitions of a romance novel may be broader, including other
+            plots and endings or more than two people, or narrower, restricting the types of romances or conflicts.</p>
+    {% endif %}
+
+    {% if(genre == "Fantasy") %}
+        <p>Fantasy is a genre that uses magic and other supernatural forms as a primary element of plot, theme, and/or
+            setting. Fantasy is generally distinguished from science fiction and horror by the expectation that it steers
+            clear of technological and macabre themes, respectively, though there is a great deal of overlap between the
+            three (collectively known as speculative fiction or science fiction/fantasy)<br><br>
+            In its broadest sense, fantasy comprises works by many writers, artists, filmmakers, and musicians, from ancient
+            myths and legends to many recent works embraced by a wide audience today, including young adults, most of whom
+            are represented by the works below.</p>
+    {% endif %}
+
+    {% if(genre == "Thriller") %}
+        <p>Thrillers are characterized by fast pacing, frequent action, and resourceful heroes who must thwart the plans of
+            more-powerful and better-equipped villains. Literary devices such as suspense, red herrings and cliffhangers are
+            used extensively. <br><br>
+            Thrillers often overlap with mystery stories, but are distinguished by the structure of their plots. In a thriller,
+            the hero must thwart the plans of an enemy, rather than uncover a crime that has already happened. Thrillers also
+            occur on a much grander scale: the crimes that must be prevented are serial or mass murder, terrorism, assassination,
+            or the overthrow of governments. Jeopardy and violent confrontations are standard plot elements. While a mystery
+            climaxes when the mystery is solved, a thriller climaxes when the hero finally defeats the villain, saving his own
+            life and often the lives of others.</p>
+    {% endif %}
+
+
+
+
     <div class="row">
-        {% for book in books[:8] %}
-            {% if('Romance' in book['genre']) %}
+        {% for book in books %}
+            {% if( genre in book['genre']) %}
                 <div class="col-md-3 col-sm-6 genre-book">
                     {% set bookId = books.index(book) %}
                     <a href="{{ url_for('book', id= bookId) }}">
@@ -22,45 +56,12 @@
             {% endif %}
         {% endfor %}
     </div>
-
-        <br><br>
-
-    <h1 class="genre">Fantasy </h1><p class="more"><a href="" class="float-right">More</a></p>
-    <div class="row">
-        {% for book in books %}
-            {% if('Fantasy' in book['genre']) %}
-                <div class="col-md-3 col-sm-6 genre-book">
-                    {% set bookId = books.index(book) %}
-                    <a href="{{ url_for('book', id= bookId) }}">
-                        <img src="{{book['imgUrl']}}" alt="book">
-                    </a>
-                </div>
-            {% endif %}
-        {% endfor %}
     </div>
-
-    <br><br>
-
-    <h1 class="genre">Thriller </h1><p class="more"><a href="" class="float-right">More</a></p>
-    <div class="row">
-        {% for book in books %}
-            {% if('Thriller' in book['genre']) %}
-                <div class="col-md-3 col-sm-6 genre-book">
-                    {% set bookId = books.index(book) %}
-                    <a href="{{ url_for('book', id= bookId) }}">
-                    <img src="{{book['imgUrl']}}" alt="book">
-                    </a>
-                </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-        <
-    </div>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-3 col-sm-6 fav-genre">
         <h2>Favorite Genres</h2>
-        <a href="">Romance</a><br>
-        <a href="">Fantasy</a><br>
-        <a href="">Thriller</a>
+        <a href="{{url_for('genre', genre= 'Romance')}}">Romance</a><br>
+        <a href="{{url_for('genre', genre= 'Fantasy')}}">Fantasy</a><br>
+        <a href="{{url_for('genre', genre= 'Thriller')}}">Thriller</a>
     </div>
 </div>
 </div>

@@ -13,6 +13,18 @@ body {
   background-color: #f4f4f4;
   font-family: 'Open Sans', sans-serif;
 }
+h1{
+   font-size: 1.5em;
+    border-bottom: 1px solid darkgray;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 1.3em;
+    border-bottom: 1px solid darkgray;
+}
+.row a{
+    color: var(--accent);
+}
 .navbar{
     background-color: black;
 }
@@ -41,7 +53,7 @@ body {
 
 .btn-accent{
     background-color: var(--accent);
-    color: white;
+    color: white!important;
 }
 
 .btn-accent:hover{
