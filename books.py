@@ -74,7 +74,7 @@ books = [
                          "warning. Now she rarely stays in the same place or uses the same name for long. They've killed the only other person she trusted, but something she knows still poses a threat. They want her dead, and soon. When her former handler offers her a way out, she realizes "
                          "it's her only chance to erase the giant target on her back. But it means taking one last job for her ex-employers. To her horror, the information she acquires only makes her situation more dangerous. ",
           "author": "Stephenie Meyer",
-          "genre": ["Thriller", "Romance"],
+          "genre": ["Thriller"],
           "wantToRead": False,
           "friendRead": False,
           "featureBook": True},
@@ -102,7 +102,5 @@ books = [
      "wantToRead": False,
      "friendRead": False,
      "featureBook": True},
-
-
 
 ]
