@@ -1,3 +1,6 @@
+from routes import db
+db.create_all()
+
 river = Book(title= 'River Recruit', imgUrl='https://images.gr-assets.com/books/1392027696l/20386042.jpg', description= 'A beautiful, young shape-shifter discovers a lost backpacker trespassing in her territory during a blizzard. She has two choices: recruit him into her cult-like tribe, or kill him.', author= 'Charlotte Abel', genre= 'Romance', wantToRead= False, friendRead= True, featureBook= False)
 
 compass= Book(title= 'The Golden Compass(His Dark Materials #1)', imgUrl='https://images.gr-assets.com/books/1505766203l/119322.jpg', description= "Lyra is rushing to the cold, far North, where witch clans and armored bears rule. North, where the Gobblers take the children they steal--including her friend Roger. North, where her fearsome uncle Asriel is trying to build a bridge to a parallel world. Can one small girl make a difference in such great and terrible endeavors? This is Lyra: a savage, a schemer, a liar, and as fierce and true a champion as Roger or Asriel could want--but what Lyra doesn't know is that to help one of them will be to betray the other.", author= 'Phillip Pullman', genre= 'Fantasy', wantToRead= False, friendRead= True, featureBook= False)
